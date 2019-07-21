@@ -1,21 +1,50 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const IndexPage = ({ data }) => {
+  const { title, description } = data.site.siteMetadata
+
+    return (
+      <Layout>
+        <SEO title="Home" />
+        <h1>{ title }</h1>
+        <p>{ description }</p>
+
+        {data.allMdx.edges.map(({ node }) => {
+          return (
+            <Link to={node.frontmatter.path}>
+              <h3>{node.frontmatter.title}</h3>
+            </Link>
+          )
+        })}
+      </Layout>
+    )
+}
+
+export const siteQuery = graphql`
+  {
+    site {
+      siteMetadata {
+        description
+        title
+        author
+      }
+    }
+    allMdx {
+      edges {
+        node {
+          frontmatter {
+            title
+            path
+          }
+        }
+      }
+    }
+  }
+`
 
 export default IndexPage
