@@ -7,13 +7,15 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-
-import "./layout.css"
+import Layout from "components/layout"
+import { Post, Wrapper } from "components/posts-layout-styles"
 
 const PostsLayout = ({ children }) => (
-  <main>
-    <article>{children}</article>
-  </main>
+  <Layout>
+    <Wrapper>
+      <Post>{children}</Post>
+    </Wrapper>
+  </Layout>
 )
 
 PostsLayout.propTypes = {
