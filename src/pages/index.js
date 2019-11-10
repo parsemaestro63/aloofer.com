@@ -1,8 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
+import IndexLayout from "../components/index-layout"
+// import Image from "../components/image"
 import SEO from "../components/seo"
 // import { Card, List, SubTitle, Title, Wrapper } from "pages/index-styles"
 
@@ -10,10 +10,11 @@ const IndexPage = ({ data }) => {
   const { title, description } = data.site.siteMetadata
 
     return (
-      <Layout>
+      <IndexLayout>
         <SEO title="Home" />
+
         <h1>{ title }</h1>
-        <p>{ description }</p>
+        <p>{ description } </p>
 
         {data.allMdx.edges.map(({ node }) => {
           return (
@@ -22,6 +23,7 @@ const IndexPage = ({ data }) => {
             </Link>
           )
         })}
+
         {/*<Wrapper>*/}
           {/*<Card>*/}
             {/*<Image />*/}
@@ -38,12 +40,12 @@ const IndexPage = ({ data }) => {
             {/*</List>*/}
           {/*</Card>*/}
         {/*</Wrapper>*/}
-      </Layout>
+      </IndexLayout>
     )
 }
 
 export const siteQuery = graphql`
-  {
+  query HeadingQuery {
     site {
       siteMetadata {
         description
