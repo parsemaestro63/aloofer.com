@@ -9,21 +9,29 @@ import PostsLayout from "components/posts-layout"
 
   # Building Aloofer
 
-  Aloofer came about by a long time desire to create my own blog, combined with attending a local Meetup introducing me to Gatsby.
+  Aloofer came about by a long time desire to create my own blog, combined with an opportunity to become exposed to Gatsby through attending a local Meetup.
 
   ## Short but Sweet Journey
 
-  The basics were put together by following the [Gatsby starter project](https://github.com/dandenney/gatsby-starter-meetup.git) (credit to Dan Denny) commit by commit, and applying relevant changes to Aloofer.
-  Along the way I familiarized with Gatsby basics, and reviewed the corresponding documentation of various components built.
+  The basics were put together by following the [Gatsby Starter Meetup](https://github.com/dandenney/gatsby-starter-meetup.git) project (by Dan Denny) commit by commit, and applying relevant changes to Aloofer.
+  Along the way I familiarized with Gatsby basics, and reviewed the corresponding documentation for the various components built.
 
-  ___The creation process___:
+  ### The Creation Process
 
-  1. Clone the [starter project](https://github.com/dandenney/gatsby-starter-meetup.git) from the Meetup, and change Git configuration to point Aloofer's repository
+  1. Clone the Gatsby Starter Meetup project, and change its Git configuration to point Aloofer's repository
   2. Reset Git to the forked project's HEAD (the [Gatsby Starter Default](https://github.com/gatsbyjs/gatsby-starter-default) project)
-  3. Separately open the starter project in Github
+  3. Separately open the Meetup project in Github
   4. And manually apply changes introduced in each commit as applicable to Aloofer
 
 
-  So far, my Gatsby experience is mostly positive. Of course, as I continue building Aloofer, I'll form more of an opinion on the framework.
+  ### Takeaways
+
+  So far, my Gatsby experience is mostly positive. Creating pages are fairly simple, requiring at a minimum to export a React component with some JSX for markup. Developing simple pages seems simpler as compared to Wordpress, although the simplicity doesn't limit adding more complex features.
+
+  Data access is given through a GraphQL layer, and Gatsby plugins need to provide the data. I'm using [Gatsby MDX](https://www.gatsbyjs.org/packages/gatsby-plugin-mdx/) for blog posts to leverage JSX + Markdown syntax.
+
+  Styling options are plenty, from applying global styles in a single stylesheet (more traditional approach) to CSS-in-JS using libraries like [Gatsby Emotion](https://www.gatsbyjs.org/packages/gatsby-plugin-emotion/). I actually took a little dive into Emotion, and it's the styling Aloofer is using.
+
+  I'll hope to explore Gatsby further as I continue to build Aloofer.
 
 </PostsLayout>

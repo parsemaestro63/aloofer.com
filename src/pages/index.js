@@ -9,39 +9,39 @@ import SEO from "../components/seo"
 const IndexPage = ({ data }) => {
   const { title, description } = data.site.siteMetadata
 
-    return (
-      <IndexLayout>
-        <SEO title="Home" />
+  return (
+    <IndexLayout>
+      <SEO title="Home" />
 
-        <h1>{ title }</h1>
-        <p>{ description } </p>
+      <h1>{ title }</h1>
+      <p>{ description } </p>
 
-        {data.allMdx.edges.map(({ node }) => {
-          return (
-            <Link to={node.frontmatter.path}>
-              <h3>{node.frontmatter.title}</h3>
-            </Link>
-          )
-        })}
+      {data.allMdx.edges.map(({ node }) => {
+        return (
+          <Link to={node.frontmatter.path}>
+            <h3>{node.frontmatter.title}</h3>
+          </Link>
+        )
+      })}
 
-        {/*<Wrapper>*/}
-          {/*<Card>*/}
-            {/*<Image />*/}
-            {/*<Title>{title}</Title>*/}
-            {/*<SubTitle>{description}</SubTitle>*/}
-            {/*<h2>Tracks</h2>*/}
-            {/*<List>*/}
-              {/*<li>no-useless-escape</li>*/}
-              {/*<li>’success’ is not defined</li>*/}
-              {/*<li>sentMessage</li>*/}
-              {/*<li>bad request</li>*/}
-              {/*<li>PromiseRejectionEvent</li>*/}
-              {/*<li>failed to process</li>*/}
-            {/*</List>*/}
-          {/*</Card>*/}
-        {/*</Wrapper>*/}
-      </IndexLayout>
-    )
+      {/*<Wrapper>*/}
+        {/*<Card>*/}
+          {/*<Image />*/}
+          {/*<Title>{title}</Title>*/}
+          {/*<SubTitle>{description}</SubTitle>*/}
+          {/*<h2>Tracks</h2>*/}
+          {/*<List>*/}
+            {/*<li>no-useless-escape</li>*/}
+            {/*<li>’success’ is not defined</li>*/}
+            {/*<li>sentMessage</li>*/}
+            {/*<li>bad request</li>*/}
+            {/*<li>PromiseRejectionEvent</li>*/}
+            {/*<li>failed to process</li>*/}
+          {/*</List>*/}
+        {/*</Card>*/}
+      {/*</Wrapper>*/}
+    </IndexLayout>
+  )
 }
 
 export const siteQuery = graphql`
